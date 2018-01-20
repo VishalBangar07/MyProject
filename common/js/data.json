@@ -1,0 +1,39 @@
+{
+    "title": "My App",
+    "pizzaObj":
+	{
+        "category":
+		[
+			{
+				"title": "a",
+				"desc": "description",
+				"size": ["small", "medium", "large"],
+				"prize": [100, 200, 300]
+			},
+			{
+				"title": "b",
+				"desc": "description",
+				"size": ["small", "medium", "large"],
+				"prize": [100, 200, 300]
+			},
+			{
+				"title": "c",
+				"desc": "description",
+				"size": ["small", "medium", "large"],
+				"prize": [100, 200, 300]
+			},
+			{
+				"title": "d",
+				"desc": "description",
+				"size": ["small", "medium", "large"],
+				"prize": [100, 200, 300]
+			},
+			{
+				"title": "e",
+				"desc": "description",
+				"size": ["small", "medium", "large"],
+				"prize": [100, 200, 300]
+			}
+		]
+    }
+}
