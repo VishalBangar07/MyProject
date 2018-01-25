@@ -20,7 +20,7 @@ var Controller = function()
 	
 	function createView()
 	{
-		var _dropDownTop = 60, _dropDownLeft = 50;
+		var _dropDownTop = 70, _dropDownLeft = 135;
 		console.log(modelData);
 		
 		var loginPageWrapper = document.createElement('div');
@@ -29,12 +29,24 @@ var Controller = function()
 		var menuPageWrapper = document.createElement('div');
 		$(menuPageWrapper).appendTo('body').attr('id', 'menuPageWrapper').hide();
 		
+		var appTitle = document.createElement('div');
+		$(appTitle).appendTo(loginPageWrapper).css({
+			"position":"absolute",
+			"left":"0px",
+			"top":"100px",
+			"width":"600px",
+			"font-size": "35px",
+			"text-align": "center",
+			"color": "#b24040",
+			"font-family": "inherit"
+		}).html(modelData.title);
+		
 		var _userNameTxtField = document.createElement('input');
 		//$(_userNameTxtField).appendTo(loginPageWrapper).attr({'id':'u_name', "contenteditable":true}).addClass('username');
-		$(_userNameTxtField).appendTo(loginPageWrapper).attr({'id':'u_name', "placeholder":"Enter user name here"}).addClass('username');
+		$(_userNameTxtField).appendTo(loginPageWrapper).attr({'id':'u_name', "placeholder":"Enter User Name Here..."}).addClass('username');
 		
 		var _pwdTxtField = document.createElement('input');
-		$(_pwdTxtField).appendTo(loginPageWrapper).attr({'id':'pwd', 'type':'password', "placeholder":"Enter password here"}).addClass('password');
+		$(_pwdTxtField).appendTo(loginPageWrapper).attr({'id':'pwd', 'type':'password', "placeholder":"Enter Password Here..."}).addClass('password');
 	
 		var loginBtn = document.createElement('div');
 		$(loginBtn).appendTo(loginPageWrapper).attr('id','loginBtn').html('Login');
@@ -54,6 +66,15 @@ var Controller = function()
 		var orderDetailWrapper = document.createElement('div');
 		$(orderDetailWrapper).appendTo(menuPageWrapper).attr('id','orderDetail').addClass('orderDetailWrapper');
 		
+		var _itemTxt = document.createElement('div');
+		$(_itemTxt).appendTo(menuPageWrapper).addClass('itemTxt').html('Item');
+		
+		var _sizeTxt = document.createElement('div');
+		$(_sizeTxt).appendTo(menuPageWrapper).addClass('sizeTxt').html('Size');
+		
+		var _quantityTxt = document.createElement('div');
+		$(_quantityTxt).appendTo(menuPageWrapper).addClass('quantityTxt').html('Quantity');
+		
 		var confirmBtn = document.createElement('div');
 		$(confirmBtn).appendTo(menuPageWrapper).attr('id','confirmBtn').html('Confirm Order');
 		
@@ -67,7 +88,7 @@ var Controller = function()
 		$(closeBtn).appendTo(orderPopup).attr('id','closeBtn').css({
 			    "position": "absolute",
 				"right": "10px",
-				"top":"5px",
+				"top":"10px",
 				"width": "25px", 
 				"height": "25px", 
 				"text-align": "center",
@@ -214,9 +235,28 @@ var Controller = function()
 	function confirmOrder(e)
 	{
 		$("#closeBtn").css('cursor', 'pointer').off('click', closePopup).on('click', closePopup);
+		storeOrder();
 		//checkValidation();
 		showDeliveryMsg();
 		//unbindAllEvent();
+	}
+	
+	function storeOrder()
+	{
+		var orderObj = new Object();
+		var _arr = [];
+		for(var i=0; i<2; i++)
+		{
+			_arr[i] = $("#selectedText_"+i).attr('selected-id')*1;
+		}
+		
+		orderObj.itemName = modelData.pizzaObj.category[_arr[0]]["title"];
+		orderObj.size = modelData.pizzaObj.category[_arr[0]]["size"][_arr[1]];
+		orderObj.ingredients = modelData.pizzaObj.category[_arr[0]]["ingredients"];
+		orderObj.price = modelData.pizzaObj.category[_arr[0]]["prize"][_arr[1]];
+		orderObj.type = modelData.pizzaObj.category[_arr[0]]["type"];
+		
+		console.log(orderObj)
 	}
 	
 	/*function checkValidation()
@@ -307,8 +347,7 @@ var Controller = function()
 		var _parent = $(e.target).parent().parent();
 		var _textVal = $(e.target).html();
 		
-		console.log($(e.target), $($(e.target)[0]).attr('data-id')*1)
-		
+		//console.log($(e.target), $($(e.target)[0]).attr('data-id')*1)
 		
 		//_selectArr[$(_parent)[0].id.split("_")[1]] = 1;
 		//console.log(_selectArr)

@@ -34,8 +34,9 @@ body
     top: 10px;
     width: 100%;
     text-align: center;
-    font-size: 24px;
+    font-size: 25px;
     font-family: inherit;
+    color: #5b28d8;
 }
 
 ul{
@@ -63,11 +64,13 @@ ul li{
 	padding: 5px;
     line-height: 25px;
 	border-radius: 5px;
+	font-size: 15px;
 }
 .password
 {
 	position: absolute;
     left: 140px;
+	font-size: 15px;
     top: 240px;
     width: 320px;
     border: 1px solid;
@@ -84,7 +87,7 @@ ul li{
     top: 310px;
     width: 120px;
     height: 30px;
-    border: 1px solid;
+    border: 2px solid;
     text-align: center;
     border-radius: 10px;
     line-height: 27px;
@@ -108,8 +111,8 @@ ul li{
 .quant
 {
 	position: absolute;
-    left: 790px;
-    top: 62px;
+    left: 860px;
+    top: 70px;
     width: 60px;
     border: 1px solid;
     height: 30px;
@@ -122,7 +125,7 @@ ul li{
 {
 	position: absolute;
     left: 200px;
-    top: 300px;
+    top: 310px;
     width: 600px;
     height: 200px;
     border: 1px solid;
@@ -149,7 +152,7 @@ ul li{
 {
 	position: absolute;
     left: 0px;
-    top: 110px;
+    top: 130px;
     width: 500px;
     height: 30px;
     text-align: center;
@@ -161,9 +164,9 @@ ul li{
 {
 	position: absolute;
     left: 260px;
-    top: 110px;
+    top: 150px;
     width: 500px;
-    height: 500px;
+    height: 310px;
     line-height: 27px;
     border-radius: 10px;
     z-index: 10;
@@ -173,10 +176,43 @@ ul li{
 #orderPopupPatch
 {
 	position: absolute;
-    left: 20px;
+    left: 0px;
     top: 42px;
-    width: 930px;
+    width: 1024px;
     height: 600px;
     z-index: 10;
     background: rgba(249, 246, 246, 0.3);
+}
+
+.itemTxt
+{
+	position: absolute;
+    left: 135px;
+    top: 45px;
+    width: 310px;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(178, 64, 64);
+}
+
+.sizeTxt
+{
+	position: absolute;
+    left: 485px;
+    top: 45px;
+    width: 310px;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(178, 64, 64);
+}
+
+.quantityTxt
+{
+	position: absolute;
+    left: 830px;
+    top: 45px;
+    width: 110px;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(178, 64, 64);
 }
