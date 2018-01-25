@@ -83,16 +83,18 @@ ul li{
 #loginBtn
 {
 	position: absolute;
-    left: 230px;
+    left: 140px;
     top: 310px;
-    width: 120px;
-    height: 30px;
-    border: 2px solid;
+    width: 307px;
+    height: 25px;
+    border: 1px solid;
     text-align: center;
-    border-radius: 10px;
-    line-height: 27px;
-	font-weight: bold;
-	cursor: pointer;
+    border-radius: 5px;
+    padding: 5px;
+    line-height: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    background: rgba(67, 189, 70, 0.5);
 }
 
 #loginMsg

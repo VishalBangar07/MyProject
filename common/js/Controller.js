@@ -61,7 +61,7 @@ var Controller = function()
 		
 		var _quantity = document.createElement('input');
 		//$(_userNameTxtField).appendTo(loginPageWrapper).attr({'id':'u_name', "contenteditable":true}).addClass('username');
-		$(_quantity).appendTo(menuPageWrapper).attr({'id':'quantity', 'type': 'number', 'min':0, 'max':100, 'value':0}).addClass('quant');
+		$(_quantity).appendTo(menuPageWrapper).attr({'id':'quantity', 'type': 'number', 'min':1, 'max':100, 'value':1}).addClass('quant');
 		
 		var orderDetailWrapper = document.createElement('div');
 		$(orderDetailWrapper).appendTo(menuPageWrapper).attr('id','orderDetail').addClass('orderDetailWrapper');
@@ -159,7 +159,7 @@ var Controller = function()
 				"width":"310px",
 				//"height":"auto",
 				"z-index":1,
-				"max-height":"200px",
+				"max-height":"175px", //200
 				"overflow":"auto"
 			}).attr("id", "dropDownChildParent_"+k).hide();
 			
@@ -217,7 +217,7 @@ var Controller = function()
 			$("#selectedText_"+i).attr('selected-id', 0).html(i == 0 ? modelData.pizzaObj.category[i]["title"] : modelData.pizzaObj.category[i]["size"][0]);
 		}
 		var _quant = document.getElementById("quantity");
-		$(_quant).val(0);
+		$(_quant).val(1);
 		updateOrder();
 	}
 	
@@ -249,14 +249,20 @@ var Controller = function()
 		{
 			_arr[i] = $("#selectedText_"+i).attr('selected-id')*1;
 		}
+		var _quantity = document.getElementById("quantity");
+		var _price = modelData.pizzaObj.category[_arr[0]]["prize"][_arr[1]];
+		
+		var _totalPrice = Number(_price) * Number(_quantity.value);
 		
 		orderObj.itemName = modelData.pizzaObj.category[_arr[0]]["title"];
 		orderObj.size = modelData.pizzaObj.category[_arr[0]]["size"][_arr[1]];
 		orderObj.ingredients = modelData.pizzaObj.category[_arr[0]]["ingredients"];
-		orderObj.price = modelData.pizzaObj.category[_arr[0]]["prize"][_arr[1]];
+		orderObj.price = _price;
+		orderObj.quantity = _quantity.value;
+		orderObj.totalPrice = _totalPrice;
 		orderObj.type = modelData.pizzaObj.category[_arr[0]]["type"];
 		
-		console.log(orderObj)
+		console.log("orderObj:: ", orderObj)
 	}
 	
 	/*function checkValidation()
