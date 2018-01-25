@@ -5,7 +5,7 @@ body
 	overflow:hidden;
 }
 
-#mainWrapper
+#menuPageWrapper
 {
 	position: absolute;
     left: 0px;
@@ -16,13 +16,167 @@ body
     background-color: rgba(255, 255, 255, 0.5);
 }
 
+#loginPageWrapper
+{
+	position: absolute;
+    left: 200px;
+    top: 50px;
+    width: 600px;
+    height: 500px;
+    border: 1px solid;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
 #titleHeadar
 {
 	position: absolute;
     left: 0px;
-    top: 40px;
+    top: 10px;
     width: 100%;
     text-align: center;
     font-size: 24px;
     font-family: inherit;
+}
+
+ul{
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+	
+}
+ul li{
+	padding: 5px 10px 5px 10px;
+	background: rgb(251, 233, 189);
+	margin-bottom: 1px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.username
+{
+	position: absolute;
+    left: 140px;
+    top: 180px;
+    width: 320px;
+    border: 1px solid;
+    height: 35px;
+	padding: 5px;
+    line-height: 25px;
+	border-radius: 5px;
+}
+.password
+{
+	position: absolute;
+    left: 140px;
+    top: 240px;
+    width: 320px;
+    border: 1px solid;
+    height: 35px;
+	padding: 5px;
+    line-height: 25px;
+	border-radius: 5px;
+}
+
+#loginBtn
+{
+	position: absolute;
+    left: 230px;
+    top: 310px;
+    width: 120px;
+    height: 30px;
+    border: 1px solid;
+    text-align: center;
+    border-radius: 10px;
+    line-height: 27px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#loginMsg
+{
+	position: absolute;
+    left: 0px;
+    top: 360px;
+    width: 600px;
+    height: auto;
+    text-align: center;
+    font-weight: bold;
+	color: red;
+	display: none;
+}
+
+.quant
+{
+	position: absolute;
+    left: 790px;
+    top: 62px;
+    width: 60px;
+    border: 1px solid;
+    height: 30px;
+    padding: 5px;
+    line-height: 25px;
+    border-radius: 5px;
+}
+
+.orderDetailWrapper
+{
+	position: absolute;
+    left: 200px;
+    top: 300px;
+    width: 600px;
+    height: 200px;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 5px 5px 12px 1px;
+}
+
+#confirmBtn
+{
+	position: absolute;
+    left: 430px;
+    top: 560px;
+    width: 120px;
+    height: 30px;
+    border: 2px solid;
+    text-align: center;
+    border-radius: 10px;
+    line-height: 27px;
+    font-weight: bold;
+	background: #e7e0e0;
+}
+#deliveryMsg
+{
+	position: absolute;
+    left: 0px;
+    top: 110px;
+    width: 500px;
+    height: 30px;
+    text-align: center;
+    line-height: 27px;
+    font-weight: bold;
+	font-size: 20px;
+}
+#orderPopup
+{
+	position: absolute;
+    left: 260px;
+    top: 110px;
+    width: 500px;
+    height: 500px;
+    line-height: 27px;
+    border-radius: 10px;
+    z-index: 10;
+    background: #efeaea;
+    box-shadow: 5px 5px 8px 0px red;
+}
+#orderPopupPatch
+{
+	position: absolute;
+    left: 20px;
+    top: 42px;
+    width: 930px;
+    height: 600px;
+    z-index: 10;
+    background: rgba(249, 246, 246, 0.3);
 }
