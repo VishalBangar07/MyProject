@@ -4,6 +4,7 @@ var Controller = function()
 	this.init = function()
 	{
 		loadPageConfig();
+		console.clear();
 	}
 	
 	function loadPageConfig(e)
@@ -20,7 +21,7 @@ var Controller = function()
 	
 	function createView()
 	{
-		var _dropDownTop = 70, _dropDownLeft = 135;
+		var _dropDownTop = 90, _dropDownLeft = 135;
 		console.log(modelData);
 		
 		var loginPageWrapper = document.createElement('div');
@@ -78,6 +79,9 @@ var Controller = function()
 		var confirmBtn = document.createElement('div');
 		$(confirmBtn).appendTo(menuPageWrapper).attr('id','confirmBtn').html('Confirm Order');
 		
+		var viewOrderBtn = document.createElement('div');
+		$(viewOrderBtn).appendTo(menuPageWrapper).attr('id','viewOrderBtn').html('View Order');
+		
 		var orderPopupPatch = document.createElement('div');
 		$(orderPopupPatch).appendTo(menuPageWrapper).attr('id','orderPopupPatch').hide();
 		
@@ -98,6 +102,9 @@ var Controller = function()
 		
 		var deliveryMsg = document.createElement('div');
 		$(deliveryMsg).appendTo(orderPopup).attr('id','deliveryMsg');
+		
+		var orderMsg = document.createElement('div');
+		$(orderMsg).appendTo(orderPopup).attr('id','orderMsg');
 		
 		for(var k=0; k<2; k++)
 		{
@@ -199,7 +206,7 @@ var Controller = function()
 			$('#dropDown_'+i).off("click", clickEvents).on("click", clickEvents);	
 		}
 		$('#confirmBtn').css('cursor', 'pointer').off('click', confirmOrder).on('click', confirmOrder);
-		//$("#closeBtn").css('cursor', 'pointer').off('click', closePopup).on('click', closePopup);
+		$('#viewOrderBtn').css('cursor', 'pointer').off('click', viewOrder).on('click', viewOrder);
 	}
 	
 	function closePopup(e)
@@ -207,7 +214,8 @@ var Controller = function()
 		$('#orderPopup').hide();
 		$('#orderPopupPatch').hide();
 		$("#closeBtn").css('cursor', 'default').off('click', closePopup);
-		showInitState();
+		if(_id == 1)
+			showInitState();
 	}
 	
 	function showInitState()
@@ -232,12 +240,33 @@ var Controller = function()
 		$('#quantity').css('background', 'rgb(255,255,255)').attr('disabled', true);
 	}
 	
+	var _id;
 	function confirmOrder(e)
 	{
-		$("#closeBtn").css('cursor', 'pointer').off('click', closePopup).on('click', closePopup);
+		console.clear();
+		_id = 1;
+		slideUpEvent();
 		storeOrder();
-		//checkValidation();
-		showDeliveryMsg();
+		showDeliveryMsg(_id);
+		//unbindAllEvent();
+	}
+	
+	function slideUpEvent()
+	{
+		for(var i=0; i<2; i++)
+		{
+			$("#dropDownChildParent_"+i).slideUp("slow");
+			var _cc = $("#dropDown_"+i).children()[0];
+			$(_cc).css("background", "#0088C1");			
+		}
+		$("#closeBtn").css('cursor', 'pointer').off('click', closePopup).on('click', closePopup);
+	}
+	
+	function viewOrder(e)
+	{
+		_id = 0;
+		slideUpEvent();
+		showDeliveryMsg(_id);
 		//unbindAllEvent();
 	}
 	
@@ -265,16 +294,33 @@ var Controller = function()
 		console.log("orderObj:: ", orderObj)
 	}
 	
-	/*function checkValidation()
+	function showDeliveryMsg(id)
 	{
-		
-	}*/
-	
-	function showDeliveryMsg()
-	{
+		$("#orderMsg").hide();
+		$("#deliveryMsg").hide();
+		if(id == 1)
+		{
+			$("#deliveryMsg").show();
+			$("#deliveryMsg").html('Your order will be delivered in 45 minutes.');
+		}
+		else
+		{
+			$("#orderMsg").show();
+			var _arr = [];
+			for(var i=0; i<2; i++)
+			{
+				_arr[i] = $("#selectedText_"+i).attr('selected-id')*1;
+			}
+			var _quantity = document.getElementById("quantity");
+			var _price = modelData.pizzaObj.category[_arr[0]]["prize"][_arr[1]];
+			
+			var _totalPrice = Number(_price) * Number(_quantity.value);
+			
+			//console.info(_arr, document.getElementById("quantity").value);
+			$("#orderMsg").html('<p class="p_css" style="margin-top: 20px;">Your order is:</p><p class="com_marginP"><b>Item Name:</b> '+modelData.pizzaObj.category[_arr[0]]["title"]+'</p><p class="com_marginP"><b>Ingredients:</b> '+modelData.pizzaObj.category[_arr[0]]["ingredients"]+'</p><p class="com_marginP"><b>Size:</b> '+modelData.pizzaObj.category[_arr[0]]["size"][_arr[1]]+'</p><p class="com_marginP"><b>Price:</b> Rs. '+modelData.pizzaObj.category[_arr[0]]["prize"][_arr[1]]+'</p><p class="com_marginP"><b>Type: </b>'+modelData.pizzaObj.category[_arr[0]]["type"]+'</p><p class="com_marginP"><b>Quantity: </b>'+_quantity.value+'</p><p class="com_marginP"><b>Total Price: </b>Rs. '+_totalPrice+'</p>');
+		}
 		$("#orderPopup").show();
 		$("#orderPopupPatch").show();
-		$("#deliveryMsg").html('Your order will be delivered in 30 minutes.');
 	}
 	
 	function checkLoginDetails(e)
@@ -378,8 +424,13 @@ var Controller = function()
 		{
 			_arr[i] = $("#selectedText_"+i).attr('selected-id')*1;
 		}
+		var _quantity = document.getElementById("quantity");
+		var _price = modelData.pizzaObj.category[_arr[0]]["prize"][_arr[1]];
+		
+		var _totalPrice = Number(_price) * Number(_quantity.value);
+		
 		//console.info(_arr, document.getElementById("quantity").value);
-		$('#orderDetail').html('<p><b>Item Name:</b> '+modelData.pizzaObj.category[_arr[0]]["title"]+'</p><p><b>Ingredients:</b> '+modelData.pizzaObj.category[_arr[0]]["ingredients"]+'</p><p><b>Size:</b> '+modelData.pizzaObj.category[_arr[0]]["size"][_arr[1]]+'</p><p><b>Price:</b> Rs. '+modelData.pizzaObj.category[_arr[0]]["prize"][_arr[1]]+'</p><p><b>Type: </b>'+modelData.pizzaObj.category[_arr[0]]["type"]+'</p>');
+		$('#orderDetail').html('<p class="p_css">Your order is:</p><p class="com_marginP"><b>Item Name:</b> '+modelData.pizzaObj.category[_arr[0]]["title"]+'</p><p class="com_marginP"><b>Ingredients:</b> '+modelData.pizzaObj.category[_arr[0]]["ingredients"]+'</p><p class="com_marginP"><b>Size:</b> '+modelData.pizzaObj.category[_arr[0]]["size"][_arr[1]]+'</p><p class="com_marginP"><b>Price:</b> Rs. '+modelData.pizzaObj.category[_arr[0]]["prize"][_arr[1]]+'</p><p class="com_marginP"><b>Type: </b>'+modelData.pizzaObj.category[_arr[0]]["type"]+'</p>');
 	}	
 	
 	function mouseEvent(e)

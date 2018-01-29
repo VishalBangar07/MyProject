@@ -5,109 +5,74 @@
         "category":
 		[
 			{
-				"title": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-				"ingredients": "description",
+				"title": "Mushroom Lovers",
+				"ingredients": "Mushroom, Onion, Capsicum",
 				"size": ["Small", "Medium", "Large"],
 				"prize": [100, 200, 300],
 				"type": "Veg"
 			},
 			{
-				"title": "bbbbbbbbbbbbbbbbbbbbbbbbbb",
-				"ingredients": "description",
+				"title": "Panner Makhani",
+				"ingredients": "Paneer Makhani Gravy, Olives",
 				"size": ["Small", "Medium", "Large"],
-				"prize": [100, 200, 300],
+				"prize": [120, 220, 350],
 				"type": "Non-Veg"
 			},
 			{
-				"title": "ccccccccccccccccccccccccccc",
-				"ingredients": "description",
+				"title": "Veg Feast",
+				"ingredients": "Onion, Capsicum, Tomato, Basil",
 				"size": ["Small", "Medium", "Large"],
-				"prize": [100, 200, 300],
+				"prize": [150, 230, 350],
 				"type": "Veg"
 			},
 			{
-				"title": "ddddddddddddddddddddddd",
-				"ingredients": "description",
+				"title": "Mexican",
+				"ingredients": "Olives, Jalapeno, Onion",
 				"size": ["Small", "Medium", "Large"],
-				"prize": [100, 200, 300],
+				"prize": [200, 300, 400],
 				"type": "Non-Veg"
 			},
 			{
-				"title": "eeeeeeeeeeeeeeeeee",
-				"ingredients": "description",
+				"title": "Margarita",
+				"ingredients": "Cheese and Cheese",
 				"size": ["Small", "Medium", "Large"],
-				"prize": [100, 200, 300],
+				"prize": [130, 220, 350],
 				"type": "Veg"
 			},
 			{
-				"title": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-				"ingredients": "description",
+				"title": "Paneer Chilly",
+				"ingredients": "Paneer, Capsicum, Onion",
 				"size": ["Small", "Medium", "Large"],
-				"prize": [100, 200, 300],
+				"prize": [150, 250, 350],
 				"type": "Non-Veg"
 			},
 			{
-				"title": "bbbbbbbbbbbbbbbbbbbbbbbbbb",
-				"ingredients": "description",
+				"title": "Chicken Tikka",
+				"ingredients": "Chicken Tikka Gravy, Onion, Olives",
 				"size": ["Small", "Medium", "Large"],
-				"prize": [100, 200, 300],
-				"type": "Veg"
-			},
-			{
-				"title": "ccccccccccccccccccccccccccc",
-				"ingredients": "description",
-				"size": ["Small", "Medium", "Large"],
-				"prize": [100, 200, 300],
+				"prize": [150, 250, 350],
 				"type": "Non-Veg"
 			},
 			{
-				"title": "ddddddddddddddddddddddd",
-				"ingredients": "description",
+				"title": "Pataka Chicken",
+				"ingredients": "Chicken Sausages, Red chilly, Green Olives",
 				"size": ["Small", "Medium", "Large"],
-				"prize": [100, 200, 300],
-				"type": "Veg"
-			},
-			{
-				"title": "eeeeeeeeeeeeeeeeee",
-				"ingredients": "description",
-				"size": ["Small", "Medium", "Large"],
-				"prize": [100, 200, 300],
+				"prize": [170, 240, 350],
 				"type": "Non-Veg"
 			},
 			{
-				"title": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-				"ingredients": "description",
+				"title": "Barbeque Chicken",
+				"ingredients": "Chicken in BBQ Sauce, Olives, Jalapeno",
 				"size": ["Small", "Medium", "Large"],
-				"prize": [100, 200, 300],
-				"type": "Veg"
-			},
-			{
-				"title": "bbbbbbbbbbbbbbbbbbbbbbbbbb",
-				"ingredients": "description",
-				"size": ["Small", "Medium", "Large"],
-				"prize": [100, 200, 300],
+				"prize": [250, 350, 450],
 				"type": "Non-Veg"
 			},
 			{
-				"title": "ccccccccccccccccccccccccccc",
-				"ingredients": "description",
+				"title": "Chicken Angaara",
+				"ingredients": "Roast Chicken, Olives, Jalapeno, Paprika",
 				"size": ["Small", "Medium", "Large"],
-				"prize": [100, 200, 300],
-				"type": "Veg"
-			},
-			{
-				"title": "ddddddddddddddddddddddd",
-				"ingredients": "description",
-				"size": ["Small", "Medium", "Large"],
-				"prize": [100, 200, 300],
+				"prize": [190, 290, 400],
 				"type": "Non-Veg"
-			},
-			{
-				"title": "eeeeeeeeeeeeeeeeee",
-				"ingredients": "description",
-				"size": ["Small", "Medium", "Large"],
-				"prize": [100, 200, 300],
-				"type": "Veg"
 			}
 		]
     }

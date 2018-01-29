@@ -5,6 +5,11 @@ body
 	overflow:hidden;
 }
 
+*:focus
+{
+	outline:0;
+}
+
 #menuPageWrapper
 {
 	position: absolute;
@@ -13,7 +18,7 @@ body
     width: 1024px;
     height: 650px;
     /* border: 1px solid; */
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgb(232, 216, 216);
 }
 
 #loginPageWrapper
@@ -116,13 +121,14 @@ ul li{
 {
 	position: absolute;
     left: 860px;
-    top: 70px;
+    top: 90px;
     width: 60px;
     border: 1px solid;
     height: 30px;
     padding: 5px;
     line-height: 25px;
     border-radius: 5px;
+	background: #e8d8d8;
 }
 
 .orderDetailWrapper
@@ -130,8 +136,8 @@ ul li{
 	position: absolute;
     left: 200px;
     top: 310px;
-    width: 600px;
-    height: 200px;
+    width: 600px; 
+    height: auto;
     border: 1px solid;
     border-radius: 10px;
     padding: 10px;
@@ -141,9 +147,9 @@ ul li{
 #confirmBtn
 {
 	position: absolute;
-    left: 430px;
-    top: 560px;
-    width: 120px;
+    left: 590px;
+    top: 525px;
+    width: auto; 
     height: 30px;
     border: 2px solid;
     text-align: center;
@@ -151,7 +157,25 @@ ul li{
     line-height: 27px;
     font-weight: bold;
 	background: #e7e0e0;
+	padding: 5px;
 }
+
+#viewOrderBtn
+{
+	position: absolute;
+    left: 320px;
+    top: 525px;
+    width: auto; 
+    height: 30px;
+    border: 2px solid;
+    text-align: center;
+    border-radius: 10px;
+    line-height: 27px;
+    font-weight: bold;
+	background: #e7e0e0;
+	padding: 5px;
+}
+
 #deliveryMsg
 {
 	position: absolute;
@@ -192,7 +216,7 @@ ul li{
 {
 	position: absolute;
     left: 135px;
-    top: 45px;
+    top: 60px;
     width: 310px;
     text-align: center;
     font-size: 18px;
@@ -203,7 +227,7 @@ ul li{
 {
 	position: absolute;
     left: 485px;
-    top: 45px;
+    top: 60px;
     width: 310px;
     text-align: center;
     font-size: 18px;
@@ -214,9 +238,26 @@ ul li{
 {
 	position: absolute;
     left: 830px;
-    top: 45px;
+    top: 60px;
     width: 110px;
     text-align: center;
     font-size: 18px;
     color: rgb(178, 64, 64);
+}
+
+.p_css
+{
+	margin-top: -6px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;	
+}
+
+.com_marginP
+{
+	margin: -15px 0px 20px 0px;
+}
+#orderMsg
+{
+	padding-left: 23px;
 }
